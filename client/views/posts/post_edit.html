@@ -1,0 +1,49 @@
+<template name="postEdit">
+  <form class="main">
+    <div class="control-group">
+        <label class="control-label" for="title">Title</label>
+        <div class="controls">
+            <input name="title" type="text" value="{{title}}" placeholder="Title"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="year">Year</label>
+        <div class="controls">
+            <input name="year" type="text" value="{{year}}" placeholder="Year"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="producer">Producer</label>
+        <div class="controls">
+            <input name="producer" type="text" value="{{producer}}" placeholder="Producer"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="poster">Poster image URL</label>
+        <div class="controls">
+            <input name="poster" type="text" value="{{poster}}" placeholder="Poster image URL"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="description">Description</label>
+        <div class="controls">
+            <textarea name="description">{{description}}</textarea>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" value="Submit" class="btn btn-success"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" value="Delete" class="btn btn-danger delete"/>
+        </div>
+    </div>
+  </form>
+</template>

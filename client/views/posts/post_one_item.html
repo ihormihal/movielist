@@ -1,0 +1,15 @@
+<template name="postOneItem">
+  <div class="row-fluid">
+    <div class="post">
+    	<div class="poster span3"><img src="{{poster}}"></div>
+      <div class="post-content span9">
+        <h3>{{title}}</h3>
+        <p>Post by: {{this.userId}}</p>
+        <p>Producer: {{producer}}</p>
+        <p>Year: {{year}}</p>
+        <p>{{description}}</p>
+        {{#if ownPost}}<a class="btn btn-warning" href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
+      </div>
+    </div>
+  </div>
+</template>

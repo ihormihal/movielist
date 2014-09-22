@@ -1,0 +1,15 @@
+<template name="postItem">
+  <div class="post span3">
+  	<div class="poster"><img src="{{poster}}"></div>
+    <div class="post-content">
+      <h3>{{title}}</h3>
+      <p>Post by: {{author}}</p>
+      <p><a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a></p>
+      <p>Producer: {{producer}}</p>
+      <p>Year: {{year}}</p>
+      <p>{{description}}</p>
+      <a href="{{pathFor 'postPage'}}" class="btn btn-success">More</a>
+      {{#if ownPost}}<a class="btn btn-warning" href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
+    </div>
+  </div>
+</template>

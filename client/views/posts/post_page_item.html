@@ -4,7 +4,7 @@
     	<div class="poster span3"><img src="{{poster}}"></div>
       <div class="post-content span9">
         <h3>{{title}}</h3>
-        <p>Post by: {{this.userId}}</p>
+        <p>Post by: {{author}}</p>
         <p>Director: {{director}}</p>
         <p>Year: {{year}}</p>
         <p>Country:
@@ -20,6 +20,7 @@
         <p>IMDb: {{imdb}}</p>
         <br>
         <p>{{description}}</p>
+        <p><a href="#" class="upvote btn {{upvotedClass}}">⬆</a> {{votes}} votes</p>
         {{#if ownPost}}<a class="btn btn-warning" href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
       </div>
     </div>

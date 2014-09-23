@@ -50,7 +50,12 @@ Meteor.methods({
     var user = Meteor.user();
     // ensure the user is logged in
     if (!user)
-      throw new Meteor.Error(401, "You need to login to upvote");
+      throw new Meteor.Error(401, "Надо залогиниться чтобы голосовать");
+    var post = Posts.findOne(postId);
+    if (!post)
+      throw new Meteor.Error(422, 'Пост не найден');
+    if (_.include(post.upvoters, user._id))
+      throw new Meteor.Error(422, 'Вы уже голосовали за этот пост');
     
     Posts.update({
       _id: postId, 

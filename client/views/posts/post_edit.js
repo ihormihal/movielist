@@ -5,9 +5,8 @@ Template.postEdit.events({
     var currentPostId = this._id;
 
     var postProperties = {
-      title: $(e.target).find('[name=title]').val(),
       year: $(e.target).find('[name=year]').val(),
-      producer: $(e.target).find('[name=producer]').val(),
+      director: $(e.target).find('[name=director]').val(),
       poster: $(e.target).find('[name=poster]').val(),
       description: $(e.target).find('[name=description]').val()
     }
@@ -15,7 +14,8 @@ Template.postEdit.events({
 
     Posts.update(currentPostId, {$set: postProperties}, function(error){
       if(error){
-        alert(error.reason);
+        // display the error to the user
+        throwError(error.reason);
       }else{
         Router.go('postPage',{_id: currentPostId});
       }

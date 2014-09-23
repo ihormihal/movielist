@@ -5,7 +5,7 @@ Template.postSubmit.events({
     var post = {
       title: $(e.target).find('[name=title]').val(),
       year: $(e.target).find('[name=year]').val(),
-      producer: $(e.target).find('[name=producer]').val(),
+      director: $(e.target).find('[name=director]').val(),
       poster: $(e.target).find('[name=poster]').val(),
       description: $(e.target).find('[name=description]').val()
     }

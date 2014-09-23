@@ -7,7 +7,7 @@ Posts.allow({
 Posts.deny({
   update: function(userId,post,fieldNames){
     // may only edit the following fields:
-      return (_.without(fieldNames, 'year', 'producer','rate','poster','description').length > 0);
+      return (_.without(fieldNames, 'year', 'director','rank','poster','description').length > 0);
   }
 });
 
@@ -34,7 +34,7 @@ Meteor.methods({
     }
 
     // Выберем поля разрешенные для публикации
-    var post = _.extend(_.pick(postAttributes, 'title', 'year', 'producer', 'rate', 'poster', 'description'), {
+    var post = _.extend(_.pick(postAttributes, 'title', 'year', 'director', 'rank', 'poster', 'description'), {
       userId: user._id,
       author: user.username,
       submitted: new Date().getTime(),

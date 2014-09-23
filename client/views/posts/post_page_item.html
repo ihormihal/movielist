@@ -1,12 +1,24 @@
-<template name="postOneItem">
+<template name="postPageItem">
   <div class="row-fluid">
     <div class="post">
     	<div class="poster span3"><img src="{{poster}}"></div>
       <div class="post-content span9">
         <h3>{{title}}</h3>
         <p>Post by: {{this.userId}}</p>
-        <p>Producer: {{producer}}</p>
+        <p>Director: {{director}}</p>
         <p>Year: {{year}}</p>
+        <p>Country:
+        {{#each country}}
+        <a href="#">{{this}}</a>
+        {{/each}}
+        </p>
+        <p>Genre:
+        {{#each genre}}
+        <a href="#">{{this}}</a>
+        {{/each}}
+        </p>
+        <p>IMDb: {{imdb}}</p>
+        <br>
         <p>{{description}}</p>
         {{#if ownPost}}<a class="btn btn-warning" href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
       </div>

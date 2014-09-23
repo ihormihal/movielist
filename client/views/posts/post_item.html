@@ -1,12 +1,24 @@
 <template name="postItem">
-  <div class="post span3">
+  <div class="post span3 {{indexInRow}}">
   	<div class="poster"><img src="{{poster}}"></div>
     <div class="post-content">
       <h3>{{title}}</h3>
       <p>Post by: {{author}}</p>
       <p><a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a></p>
-      <p>Producer: {{producer}}</p>
+      <p>Director: {{director}}</p>
       <p>Year: {{year}}</p>
+      <p>Country:
+      {{#each country}}
+      <a href="#">{{this}}</a>
+      {{/each}}
+      </p>
+      <p>Genre:
+      {{#each genre}}
+      <a href="#">{{this}}</a>
+      {{/each}}
+      </p>
+      <p>IMDb: {{imdb}}</p>
+      <br>
       <p>{{description}}</p>
       <a href="{{pathFor 'postPage'}}" class="btn btn-success">More</a>
       {{#if ownPost}}<a class="btn btn-warning" href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}

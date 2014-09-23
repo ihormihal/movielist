@@ -1,5 +1,9 @@
 Template.postsList.helpers({
-  posts: function() {
-    return Posts.find({},{sort: {submitted: -1}});
+  postsWithIndex: function() {
+    this.posts.rewind();
+    return this.posts.map(function(post, index, cursor) {
+      post._index = index;
+      return post;
+    });
   }
 });

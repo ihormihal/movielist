@@ -1,9 +1,20 @@
 <template name="postsList">
-  <div class="posts">
-	<div class="row-fluid">
-    {{#each posts}}
-      {{> postItem}}
-    {{/each}}
+    <div class="posts">
+        <div class="row-fluid">
+            {{#each postsWithIndex}} 
+            	{{> postItem}}
+            {{/each}}
+        </div>
+        <div class="row-fluid">
+        	<div class="span12">
+            {{#if nextPath}}
+		     <a class="load-more" href="{{nextPath}}">Load more</a>
+		    {{else}}
+		      {{#unless ready}}
+		        {{> spinner}}
+		      {{/unless}}
+		    {{/if}}
+		    </div>
+        </div>
     </div>
-  </div>
 </template>

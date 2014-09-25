@@ -27,7 +27,7 @@ Template.postEdit.events({
 
     if(confirm('Delete this post?')){
       Posts.remove(this._id);
-      Router.go('postsList');
+      Router.go('home');
     }
   }
 });

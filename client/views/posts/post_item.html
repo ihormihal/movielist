@@ -1,11 +1,12 @@
 <template name="postItem">
-  <div class="post span3 {{indexInRow}}">
-  	<div class="poster"><img src="{{poster}}"></div>
+  <div class="post span3 {{indexInRow}}" {{attributes}}>
+  	<div class="poster"><a href="{{pathFor 'postPage'}}"><img src="{{poster}}"></a></div>
     <div class="post-content">
-      <h3>{{title}}</h3>
+      <h3><a href="{{pathFor 'postPage'}}">{{title}}</a></h3>
       <p>Post by: {{author}}</p>
-      <p><a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a></p>
-      <p><a href="#" class="upvote btn {{upvotedClass}}">⬆</a> {{votes}} votes</p>
+      <p><a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a></p>
+      <div class="votes"><a href="#" class="upvote btn {{upvotedClass}}">⬆</a> {{pluralize votes "Vote"}}</div>
+      <div class="clearfix"></div>
       <p>Director: {{director}}</p>
       <p>Year: {{year}}</p>
       <p>Country:

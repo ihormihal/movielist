@@ -7,10 +7,9 @@ Template.postEdit.events({
     var postProperties = {
       year: $(e.target).find('[name=year]').val(),
       director: $(e.target).find('[name=director]').val(),
-      poster: $(e.target).find('[name=poster]').val(),
+      //poster: $(e.target).find('[name=poster]').val(),
       description: $(e.target).find('[name=description]').val()
     }
-
 
     Posts.update(currentPostId, {$set: postProperties}, function(error){
       if(error){

@@ -14,7 +14,7 @@ Posts.deny({
 Meteor.methods({
   post: function(postAttributes) {
     var user = Meteor.user();
-      postWithSameTitle = Posts.findOne({title: postAttributes.title});
+    postWithSameTitle = Posts.findOne({title: postAttributes.title});
 
     // Удостоверимся что пользователь залогинен
     if (!user){

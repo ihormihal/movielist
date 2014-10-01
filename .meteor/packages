@@ -11,3 +11,8 @@ sacha:spin
 accounts-password
 mrt:accounts-ui-bootstrap-dropdown
 mrt:iron-router-progress
+cfs:standard-packages
+cfs:filesystem
+cfs:ejson-file
+cfs:access-point
+

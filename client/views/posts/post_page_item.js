@@ -3,7 +3,7 @@ Template.postPageItem.helpers({
     return this.author_id == Meteor.userId();
   },
   posterImg: function () {
-    return Posters.findOne().url('posters');
+    return Posters.findOne({_id:this.poster});
   },
   upvotedClass: function() {
     var userId = Meteor.userId();

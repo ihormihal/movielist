@@ -10,7 +10,7 @@ Template.postSubmit.events({
       title: $(e.target).find('[name=title]').val(),
       year: $(e.target).find('[name=year]').val(),
       director: $(e.target).find('[name=director]').val(),
-      poster: posterObj,
+      poster: posterObj._id,
       description: $(e.target).find('[name=description]').val()
     };
     

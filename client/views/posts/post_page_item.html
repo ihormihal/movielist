@@ -2,7 +2,11 @@
   <div class="row-fluid">
     <div class="post">
     	<div class="poster span3">
-        <img src="{{posterImg}}">
+        {{#if posterImg}}
+          <img src="{{posterImg.url store='posters'}}">
+        {{else}}
+          <img src="{{poster}}">
+        {{/if}}
       </div>
       <div class="post-content span9">
         <h3>{{title}}</h3>
